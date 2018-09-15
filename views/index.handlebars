@@ -1,0 +1,44 @@
+
+
+<div id="containerI">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4" id="topping">All of the latest NHL news articles all in one place!</h1>
+      <div class="text-center">
+        <form action="/articles/saved" method="GET">
+          <input type="submit" class="btn-danger" value="GO TO SAVED!">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  {{#each data}}
+  <div class="container-fluid eachstory">
+    <div class="row">
+
+      <div class="col-12">
+        <h1 id="titleh1">{{this.title}}</h1>
+      </div>
+    </div>
+    <div class="row">
+
+    </div>
+    <div class="row">
+      <div class="col-12" id="h4link">
+        <h4>
+          <a href="http://www.nhl.com{{this.link}}" id="alink">Here is the Link</a>
+        </h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12" id="subbut">
+        <form action="/articles/save/{{this.id}}" method="POST" class="save">
+          <input type="submit" class="btn-danger" value=" Save Article! "></input>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br>
+  {{/each}}
+</div>

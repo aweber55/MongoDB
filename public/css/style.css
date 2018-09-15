@@ -1,0 +1,67 @@
+h3 {
+    color: red;
+}
+
+nav {
+    background: rgb(85, 85, 235);
+    padding: 20px;
+    text-align: center;
+}
+.jumbotron {
+    background-color: aqua;
+}
+#gotosave {
+    text-align: center;
+    margin: 0, auto;
+}
+#topping {
+    font-size: 60px;
+    color: red;
+    text-align: center;
+    /* background-color: bisque; */
+    padding: 15px;
+    border: 2px, solid, red;
+}
+#topP {
+    font-size: 20px;
+    color: red;
+    text-align: center;
+    
+    padding: 15px;
+    border: 2px, solid, red;
+
+}
+#containerI {
+    background: url("../images/ice-hockey2.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#containerS {
+    background: url("../images/hockey3.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#titleh1 {
+    background: rgb(117, 182, 243);
+    text-align: center;
+    padding: 12px;
+    font-size: 30px;
+    color: rgb(168, 6, 6);
+
+}
+#alink {
+    background: rgb(212, 208, 208);
+}
+#h4link {
+    text-align: center;
+    background-color: burlywood;
+}
+#subbut {
+    text-align: center;
+}
+
+

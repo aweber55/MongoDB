@@ -1,0 +1,81 @@
+<div id="containerS">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4" id="topping">Saved Articles</h1>
+            <p class="lead" id="topP">Here you can peruse your saved articles and delete them when you are finished.</p>
+            <div class="text-center">
+                <form action="/articles" method="GET">
+                    <input type="submit" class="btn-danger" value="GO HOME!">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    {{#each data}}
+    {{#if saved}}
+    <br>
+    <div class="saved-article container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 id="titleh1">{{this.title}}</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <h4 id="h4link">
+                    <a href="http://www.nhl.com{{this.link}}">Learn More Here!</a>
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <form action="/articles/unsave/{{this.id}}" method="POST" class="unsave">
+                    <input type="submit" class="btn btn-danger btn-lg" value="UnSave Article!"></input>
+                </form>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    {{!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#mymodal{{this.id}}">Add
+                        Note</button> --}}
+                    <div class="modal fade" id="mymodal{{this.id}}">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3>Add a note to this article</h3>
+                                    <div class="row">
+                                        {{#each notes}}
+                                        {{this.title}} : {{this.body}}
+                                        <form action="/note/delete/{{this.id}}" method="POST" class="unsave">
+                                            <input type="submit" class="btn-danger" value="Delete Note"></input>
+                                        </form>
+                                        <br>
+                                        <br>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                                <br>
+
+
+                            </div>
+                            <br>
+
+                            {{!--
+                        </div> --}}
+                    </div>
+                    {{!-- </div> --}}
+            </div>
+            {{!--
+        </div> --}}
+    </div>
+    {{!--
+</div> --}}
+</div>
+{{!-- </div> --}}
+<br>
+{{/if}}
+{{/each}}
