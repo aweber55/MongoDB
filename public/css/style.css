@@ -1,7 +1,9 @@
 h3 {
     color: red;
 }
-
+.jumbotron {
+    background-image: url("../images/skates.jpg");
+}
 nav {
     background: rgb(85, 85, 235);
     padding: 20px;
