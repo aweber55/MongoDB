@@ -20,6 +20,10 @@ nav {
     font-size: 60px;
     color: red;
     text-align: center;
+    color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
     /* background-color: bisque; */
     padding: 15px;
     border: 2px, solid, red;
