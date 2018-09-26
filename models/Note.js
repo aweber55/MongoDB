@@ -11,7 +11,12 @@ var NoteSchema = new Schema({
     },
     name: {
         type: String
+    },
+    articleId: {
+        type:Schema.Types.ObjectId,
     }
+    //     ref:"article"
+    // }
     // title: {
     //     type: String
     // },

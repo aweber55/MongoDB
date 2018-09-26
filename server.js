@@ -107,6 +107,32 @@ app.get("/articles", function (req, res) {
 
     });
 });
+
+
+
+// ==================================
+app.post("/articles/notes", function(req, res) {
+  console.log(req.body);
+  var articleId = req.params.id;
+  var noteObj = {
+    name: req.body.name,
+    body: req.body.body,
+    articleID:articleId
+  }
+  // Insert the note into the notes collection
+  db.Note.create(noteObj, function(error, saved) {
+    // Log any errors
+    if (error) {
+      console.log(error);
+    }
+    else {
+      console.log("saved note");
+      // Otherwise, send the note back to the browser
+      // This will fire off the success function of the ajax request
+      res.send(saved);
+    }
+  });
+});
 app.get("/articles/saved", function (req, res) {
   console.log("getting articles");
   // Grab every document in the Articles collection
