@@ -177,8 +177,38 @@ app.get("/articles/:id", function (req, res) {
     });
 });
 
+app.post("/articles/:id", function(req, res) {
+  // Create a new note and pass the req.body to the entry
+  var newNote = new Note(req.body);
+  console.log("new note" + newNote);
 
+  // And save the new note to the db
+  newNote.save(function(error, doc) {
+      // Log any errors
+      if (error) {
+          console.log(error);
+      }
+      // Otherwise
+      else {
+          // Use the article id to find it's notes
 
+          Article.findOneAndUpdate({ '_id': req.params.id }, { $push: { 'note': doc._id } }, { new: true, upsert: true })
+              .populate('note')
+
+              // Execute the above query
+              .exec(function(err, doc) {
+                  // Log any errors
+                  if (err) {
+                      console.log(err);
+                  } else {
+                      // Or send the document to the browser
+                      res.send(doc);
+                  }
+              });
+      }
+  });
+});
+//============================
 // Route for saving/updating an Article's associated Note
 app.post("/articles/:id", function (req, res) {
   // Create a new note and pass the req.body to the entry

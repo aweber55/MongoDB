@@ -34,14 +34,14 @@
                 <form action="/articles/unsave/{{this.id}}" method="POST" class="unsave">
                     <input type="submit" class="btn btn-danger btn-lg" value="UnSave Article!"></input>
                 </form>
-                <button id="showNote" data-target={{this._id}} method="POST" data-id={{this._id}} class="addNote">Add Note</button>
+                
             </div>
             <form action="/articles/notes/">
              
                 <input id="notes1 {{this._id}}">
 
                 </input>
-                
+                <button id="showNote" data-target={{this._id}} method="POST" data-id={{this._id}} class="addNote">Add Note</button>
                 
                
                 <input type="submit" class="btn btn-danger btn-lg" value="UnSave Note!"></input>
